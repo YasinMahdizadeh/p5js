@@ -28,7 +28,7 @@ function setup() {
     
     // Draw some stuff...
     for (let y=0; y<height; y+=20) {
-      for (let x=0; x<width; x+=20) {
+      for (let x=0; x<width; x+=25) {
         fill(y/height * 255, 0, x/height * 255);
         circle(x, y, 20);
       }
