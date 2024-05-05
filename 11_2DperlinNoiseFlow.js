@@ -1,6 +1,7 @@
 var inc = 0.2;
 var scl = 20;
 var cols, rows;
+var par_num = 400;
 
 // our time
 var zoff = 0;
@@ -17,8 +18,10 @@ function setup() {
     rows = floor(height / scl);
     //frameRate Parameter
     fr = createP();
-
-    particles[0] = new particle();
+    //add particles
+    for ( i = 0 ; i < par_num ; i++) {
+        particles[i] = new particle();
+    }
 }
 
 function draw() {
@@ -37,7 +40,7 @@ function draw() {
             push();
             translate(x * scl, y * scl);
             rotate(v.heading());
-            line(0, 0, scl, 0);
+            //line(0, 0, scl, 0);
             pop();
             xoff += inc;
         }
@@ -46,8 +49,13 @@ function draw() {
 
     zoff += 0.01;
 
-    particles[0].update();
-    particles[0].show();
+ 
+
+    for ( i = 0 ; i < particles.length ; i++) {
+        particles[i].update();
+        particles[i].show();
+        particles[i].edge();
+    }
 
     //Shows frameRates
     fr.html(floor(frameRate()));
