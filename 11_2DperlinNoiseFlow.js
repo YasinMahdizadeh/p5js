@@ -2,6 +2,9 @@ var inc = 0.2;
 var scl = 20;
 var cols, rows;
 
+// our time
+var zoff = 0;
+
 var fr;
 
 function setup() {
@@ -21,11 +24,10 @@ function draw() {
         var xoff = 0.00;
 
         for ( x = 0; x < rows; x++){
-            var index = ( x + y * width ) * 4;
-            var r = noise(xoff,yoff) * 255;
-            var v = p5.Vector.fromAngle(0);
-            // fill(r);
-            // rect(x * scl, y * scl, scl, scl);
+            //
+            var angle = noise(xoff,yoff,zoff) * TWO_PI;
+            var v = p5.Vector.fromAngle(angle);
+            //
             stroke(185);
             push();
             translate(x * scl, y * scl);
@@ -36,6 +38,8 @@ function draw() {
         }
         yoff += inc;
     }
-   //Shows frameRates
+
+    zoff += 0.01;
+    //Shows frameRates
     fr.html(floor(frameRate()));
 }
