@@ -1,5 +1,5 @@
 //Particles
-function Particle() {
+function particle() {
     this.pos = createVector(0, 0);
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
@@ -15,7 +15,7 @@ function Particle() {
     }
 
     this.show = function() {
-        stroke(0);
+        stroke(200);
         point(this.pos.x, this.pos.y);
     }
 

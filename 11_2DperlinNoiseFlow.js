@@ -5,6 +5,9 @@ var cols, rows;
 // our time
 var zoff = 0;
 
+//particles
+var particles = [];
+
 var fr;
 
 function setup() {
@@ -14,6 +17,8 @@ function setup() {
     rows = floor(height / scl);
     //frameRate Parameter
     fr = createP();
+
+    particles[0] = new particle();
 }
 
 function draw() {
@@ -40,6 +45,10 @@ function draw() {
     }
 
     zoff += 0.01;
+
+    particles[0].update();
+    particles[0].show();
+
     //Shows frameRates
     fr.html(floor(frameRate()));
 }
