@@ -8,14 +8,14 @@ var zoff = 0;
 //particles
 var particles = [];
 // particles Count
-var par_num = 1000;
+var par_num = 16000;
 
 var fr;
 //flow field
 var flowfield;
 
 function setup() {
-    createCanvas(400,400);
+    createCanvas(1080,1080);
     frameRate(30);
     cols = floor(width / scl);
     rows = floor(height / scl);
@@ -43,23 +43,26 @@ function draw() {
             var index = x + y * cols;
             var angle = noise(xoff,yoff,zoff) * TWO_PI;
             var v = p5.Vector.fromAngle(angle);
-            v.setMag(0.03);
+            v.setMag(0.16);
             flowfield[index] = v;
             //
-            stroke(185,50);
-            strokeWeight(1);
+            //show angel
 
-            push();
-            translate(x * scl, y * scl);
-            rotate(v.heading());
-            line(0, 0, scl, 0);
-            pop();
-            xoff += inc;
+            // stroke(185,50);
+            // strokeWeight(1);
+            // push();
+            // translate(x * scl, y * scl);
+            // rotate(v.heading());
+            // line(0, 0, scl, 0);
+            // pop();
+
+            //xoffset
+             xoff += inc;
         }
         yoff += inc;
     }
 
-    zoff += 0.0035;
+    zoff += 0.005;
 
  
 

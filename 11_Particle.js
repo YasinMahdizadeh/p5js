@@ -3,7 +3,7 @@ function particle() {
     this.pos = createVector(random(width), random(height));
     this.vel = createVector(0,0);
     this.acc = createVector(0, 0);
-    this.maxspeed = 1;
+    this.maxspeed = 2;
 
 
     this.update = function() {
@@ -20,8 +20,8 @@ function particle() {
     }
 
     this.show = function() {
-        stroke(200,50);
-        strokeWeight(2);
+        stroke(200,30);
+        strokeWeight(0.8);
 
         point(this.pos.x, this.pos.y);
     }
