@@ -15,7 +15,12 @@ var fr;
 var flowfield;
 
 function setup() {
-    createCanvas(1080,1080);
+
+    var cnv = createCanvas(1080,1080);
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 2;
+    cnv.position(x, y);
+
     frameRate(30);
     cols = floor(width / scl);
     rows = floor(height / scl);
