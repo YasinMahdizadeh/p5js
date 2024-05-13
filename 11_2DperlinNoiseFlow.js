@@ -16,10 +16,7 @@ var flowfield;
 
 function setup() {
 
-    var cnv = createCanvas(1080,1080);
-    var x = (windowWidth - width) / 2;
-    var y = (windowHeight - height) / 2;
-    cnv.position(x, y);
+
 
     frameRate(30);
     cols = floor(width / scl);
@@ -33,6 +30,11 @@ function setup() {
     for ( i = 0 ; i < par_num ; i++) {
         particles[i] = new particle();
     }
+
+    var cnv = createCanvas(1080,1080);
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 2;
+    cnv.position(x, y);
     background(20);
 
 }
