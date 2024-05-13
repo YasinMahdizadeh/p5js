@@ -19,7 +19,6 @@ function setup() {
 
     //createCanvas(windowWidth,windowHeight);
 
-    //rameRate(30);
     var cnv = createCanvas(1080,1080);
     var xs = (windowWidth - width) / 2;
     var ys = (windowHeight - height) / 2;
@@ -32,18 +31,13 @@ function setup() {
     flowfield = new Array(cols*rows);
 
     //frameRate Parameter
-    fr = createP();
+    //fr = createP();
     //add particles
     for ( i = 0 ; i < par_num ; i++) {
         particles[i] = new particle();
     }
 
-    //var cnv = createCanvas(windowWidth,windowHeight);
-    //createCanvas(1080 ,1080);
-    //var xs = (windowWidth - width) / 2;
-    //var ys = (windowHeight - height) / 2;
-    //cnv.position(xs, ys);
-    //translate(x,y);
+
 
     background(20);
 

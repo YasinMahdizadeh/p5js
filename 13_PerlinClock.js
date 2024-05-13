@@ -28,8 +28,6 @@ function setup() {
 
     flowfield = new Array(cols*rows);
 
-    //frameRate Parameter
-    fr = createP();
     //add particles
     for ( i = 0 ; i < par_num ; i++) {
         particles[i] = new particle();
@@ -70,15 +68,4 @@ function draw() {
 
     zoff += 0.001;
 
- 
-
-    // for ( i = 0 ; i < particles.length ; i++) {
-    //     particles[i].edge();
-    //     particles[i].follow(flowfield);
-    //     particles[i].update();
-    //     particles[i].show();
-    // }
-
-    //Shows frameRates
-    fr.html(floor(frameRate()));
 }
