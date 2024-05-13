@@ -17,9 +17,10 @@ var flowfield;
 function setup() {
 
 
-    createCanvas(1080,1080);
+    //createCanvas(1080,1080);
 
-    frameRate(30);
+    //rameRate(30);
+
     cols = floor(width / scl);
     rows = floor(height / scl);
 
@@ -32,11 +33,11 @@ function setup() {
         particles[i] = new particle();
     }
 
-    // var cnv = createCanvas(1080,1080);
-    // var x = (windowWidth - width) / 2;
-    // var y = (windowHeight - height) / 2;
-    // cnv.position(x, y);
-    //translate(x,y);
+    var cnv = createCanvas(1080,1080);
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 2;
+    cnv.position(x, y);
+    translate(x,y);
 
     background(20);
 
