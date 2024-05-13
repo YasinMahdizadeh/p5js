@@ -1,6 +1,11 @@
 function setup() {
-    createCanvas(1080,1080);
-    frameRate(25);
+    var cnv = createCanvas(1080,1080);
+    var xs = (windowWidth - width) / 2;
+    var ys = (windowHeight - height) / 2;
+    cnv.position(xs, ys);
+    translate(xs,ys);
+
+    frameRate(60);
 }
 
 function draw() {

@@ -1,6 +1,11 @@
 function setup() {
-    createCanvas(1080,1080);
-    frameRate(10);
+    // createCanvas(1080,1080);
+    // frameRate(10);
+    var cnv = createCanvas(1080,1080);
+    var xs = (windowWidth - width) / 2;
+    var ys = (windowHeight - height) / 2;
+    cnv.position(xs, ys);
+    translate(xs,ys);
 }
 function branch(len) {
     var angel = map(mouseX,0,height,0,PI);

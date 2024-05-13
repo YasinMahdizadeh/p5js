@@ -16,11 +16,11 @@ var flowfield;
 
 function setup() {
 
-    var cnv =     createCanvas(1080,1080);
-
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
-  cnv.position(x, y);
+    var cnv = createCanvas(1080,1080);
+    var xs = (windowWidth - width) / 2;
+    var ys = (windowHeight - height) / 2;
+    cnv.position(xs, ys);
+    translate(xs,ys);
     
     frameRate(30);
     cols = floor(width / scl);

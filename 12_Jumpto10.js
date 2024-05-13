@@ -20,7 +20,14 @@ function setback() {
 }
 
 function setup() {
-    createCanvas(1080,1080);
+    // createCanvas(1080,1080);
+    
+    var cnv = createCanvas(1080,1080);
+    var xs = (windowWidth - width) / 2;
+    var ys = (windowHeight - height) / 2;
+    cnv.position(xs, ys);
+    translate(xs,ys);
+    
     background(20);
     stroke(200,66);
 

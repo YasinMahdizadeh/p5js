@@ -17,9 +17,14 @@ var flowfield;
 function setup() {
 
 
-    //createCanvas(1080,1080);
+    //createCanvas(windowWidth,windowHeight);
 
     //rameRate(30);
+    var cnv = createCanvas(1080,1080);
+    var xs = (windowWidth - width) / 2;
+    var ys = (windowHeight - height) / 2;
+    cnv.position(xs, ys);
+    translate(xs,ys);
 
     cols = floor(width / scl);
     rows = floor(height / scl);
@@ -33,11 +38,12 @@ function setup() {
         particles[i] = new particle();
     }
 
-    var cnv = createCanvas(1080,1080);
-    var x = (windowWidth - width) / 2;
-    var y = (windowHeight - height) / 2;
-    cnv.position(x, y);
-    translate(x,y);
+    //var cnv = createCanvas(windowWidth,windowHeight);
+    //createCanvas(1080 ,1080);
+    //var xs = (windowWidth - width) / 2;
+    //var ys = (windowHeight - height) / 2;
+    //cnv.position(xs, ys);
+    //translate(x,y);
 
     background(20);
 
@@ -50,7 +56,7 @@ function draw() {
 
         for ( x = 0; x < rows; x++){
             //
-            var index = x + y * cols;
+            var index =  x + y * cols;
             var angle = noise(xoff,yoff,zoff) * TWO_PI;
             var v = p5.Vector.fromAngle(angle);
             v.setMag(0.16);
