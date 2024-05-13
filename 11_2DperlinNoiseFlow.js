@@ -35,13 +35,14 @@ function setup() {
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 2;
     cnv.position(x, y);
+    translate(x,y);
+
     background(20);
 
 }
 
 function draw() {
     var yoff = 0.00;
-
     for ( y = 0 ; y < cols; y++) {
         var xoff = 0.00;
 
