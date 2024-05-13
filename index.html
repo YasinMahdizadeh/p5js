@@ -6,12 +6,18 @@
 <title>Circular Buttons</title>
 <style>
   body {
+    font-family: Calibri, sans-serif; /* Specific font added */
+
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     flex-direction: column;
+  }
+
+  h1 {
+    font-size: 72px;
   }
   .button-container {
     text-align: center;
@@ -20,7 +26,7 @@
     display: inline-block;
     width: 80px;
     height: 80px;
-    background-color: #007bff;
+    background-color: #4b4b4b;
     border-radius: 50%;
     margin: 10px;
     line-height: 80px;
@@ -31,15 +37,21 @@
     border: none;
     cursor: pointer;
   }
+
+  .circular-button:hover {
+    background-color: #a1a1a1;
+    color:black
+  }
   h1 {
     margin-bottom: 20px;
   }
+
+  
 </style>
 </head>
 <body>
 
 <h1>Sketches:</h1>
-<hr>
 
 <div class="button-container">
     <a href="Sketch1.html"><button class="circular-button">1</button></a>

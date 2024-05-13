@@ -31,7 +31,7 @@ function setup() {
     flowfield = new Array(cols*rows);
 
     //frameRate Parameter
-    //fr = createP();
+    fr = createP();
     //add particles
     for ( i = 0 ; i < par_num ; i++) {
         particles[i] = new particle();
@@ -84,5 +84,5 @@ function draw() {
     }
 
     //Shows frameRates
-    //fr.html(floor(frameRate()));
+   // fr.html();
 }
