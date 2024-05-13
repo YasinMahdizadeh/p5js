@@ -1,5 +1,5 @@
 var inc = 0.2;
-var scl = 20;
+var scl = 50;
 var cols, rows;
 
 // our time
@@ -15,7 +15,13 @@ var fr;
 var flowfield;
 
 function setup() {
-    createCanvas(1080,1080);
+
+    var cnv =     createCanvas(1080,1080);
+
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+    
     frameRate(30);
     cols = floor(width / scl);
     rows = floor(height / scl);
@@ -35,10 +41,10 @@ function setup() {
 function draw() {
     var yoff = 0.00;
 
-    for ( y = 0 ; y < cols; y++) {
+    for ( y = 0 ; y <= cols; y++) {
         var xoff = 0.00;
 
-        for ( x = 0; x < rows; x++){
+        for ( x = 0; x <= rows; x++){
             //
             var index = x + y * cols;
             var angle = noise(xoff,yoff,zoff) * TWO_PI;
@@ -48,13 +54,13 @@ function draw() {
             //
             //show angel
 
-            // stroke(185,50);
-            // strokeWeight(1);
-            // push();
-            // translate(x * scl, y * scl);
-            // rotate(v.heading());
-            // line(0, 0, scl, 0);
-            // pop();
+            stroke(185,50);
+            strokeWeight(1);
+            push();
+            translate(x * scl, y * scl);
+            rotate(v.heading());
+            line(0, 0, scl, 0);
+            pop();
 
             //xoffset
              xoff += inc;
@@ -62,16 +68,16 @@ function draw() {
         yoff += inc;
     }
 
-    zoff += 0.005;
+    zoff += 0.001;
 
  
 
-    for ( i = 0 ; i < particles.length ; i++) {
-        particles[i].edge();
-        particles[i].follow(flowfield);
-        particles[i].update();
-        particles[i].show();
-    }
+    // for ( i = 0 ; i < particles.length ; i++) {
+    //     particles[i].edge();
+    //     particles[i].follow(flowfield);
+    //     particles[i].update();
+    //     particles[i].show();
+    // }
 
     //Shows frameRates
     fr.html(floor(frameRate()));
