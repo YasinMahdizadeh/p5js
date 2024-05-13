@@ -90,5 +90,5 @@ function draw() {
     }
 
     //Shows frameRates
-    fr.html(floor(frameRate()));
+    //fr.html(floor(frameRate()));
 }
